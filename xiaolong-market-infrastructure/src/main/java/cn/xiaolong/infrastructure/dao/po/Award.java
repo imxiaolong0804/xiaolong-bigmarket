@@ -1,6 +1,9 @@
 package cn.xiaolong.infrastructure.dao.po;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
@@ -10,12 +13,15 @@ import java.time.LocalDateTime;
  * @Description:
  */
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Award {
     // 自增ID
     private Integer id;
 
     // 抽奖奖品ID - 内部流转使用
-    private Integer awardId;
+    private Long awardId;
 
     // 奖品对接标识 - 每一个都是一个对应的发奖策略
     private String awardKey;

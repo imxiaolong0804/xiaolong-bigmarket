@@ -2,6 +2,7 @@ package cn.xiaolong.infrastructure.dao;
 
 import cn.xiaolong.infrastructure.dao.po.Strategy;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -15,4 +16,5 @@ public interface IStrategyDao {
 
     List<Strategy> queryStrategyList();
 
+    Strategy queryStrategyEntityByStrategyId(@Param("strategyId") Long strategyId);
 }

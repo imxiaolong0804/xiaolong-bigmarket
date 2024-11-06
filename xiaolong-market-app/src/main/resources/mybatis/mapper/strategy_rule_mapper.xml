@@ -19,5 +19,10 @@
         from strategy_rule
         limit 10
     </select>
+    <select id="queryStrategyRule" resultType="cn.xiaolong.infrastructure.dao.po.StrategyRule" resultMap="dataMap">
+        select *
+        from strategy_rule
+        where strategy_id = #{strategyId} and rule_model = #{ruleModel}
+    </select>
 
 </mapper>
