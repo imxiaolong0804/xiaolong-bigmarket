@@ -28,6 +28,7 @@ services:
     image: phpmyadmin:5.2.1
     container_name: phpmyadmin
     hostname: phpmyadmin
+    restart: always
     ports:
       - 8980:80
     environment:

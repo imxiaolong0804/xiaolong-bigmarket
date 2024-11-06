@@ -21,7 +21,7 @@ public class StrategyRule {
     private Integer awardId;
 
     // 抽象规则类型；1-策略规则、2-奖品规则
-    private Integer ruleType;
+    private Byte ruleType;
 
     // 抽奖规则类型【rule_random - 随机值计算、rule_lock - 抽奖几次后解锁、rule_luck_award - 幸运奖(兜底奖品)】
     private String ruleModel;
