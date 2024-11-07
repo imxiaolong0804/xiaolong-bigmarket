@@ -2,6 +2,7 @@ package cn.xiaolong.infrastructure.dao;
 
 import cn.xiaolong.infrastructure.dao.po.StrategyRule;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -16,4 +17,6 @@ public interface IStrategyRuleDao {
     List<StrategyRule> queryStrategyRuleList();
 
     StrategyRule queryStrategyRule(StrategyRule strategyRule);
+
+    String queryStrategyRuleValue(@Param("strategyId") Long strategyId, @Param("awardId") Integer awardId, @Param("ruleModel") String ruleModel);
 }

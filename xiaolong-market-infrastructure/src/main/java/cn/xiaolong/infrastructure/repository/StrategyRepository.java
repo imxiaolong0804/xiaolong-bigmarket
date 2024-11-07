@@ -122,10 +122,13 @@ public class StrategyRepository implements IStrategyRepository {
 
     @Override
     public StrategyRuleEntity queryStrategyRuleValueByIdAndWeight(Long strategyId, String ruleWeight) {
+        // 根据策略ID和规则权重查询策略规则
         StrategyRule strategyRule = new StrategyRule();
         strategyRule.setStrategyId(strategyId);
         strategyRule.setRuleModel(ruleWeight);
+        // 查询策略规则
         StrategyRule strategyRuleRes = strategyRuleDao.queryStrategyRule(strategyRule);
+        // 构建策略规则实体
         return StrategyRuleEntity.builder()
                 .strategyId(strategyRuleRes.getStrategyId())
                 .awardId(strategyRuleRes.getAwardId())
@@ -134,5 +137,10 @@ public class StrategyRepository implements IStrategyRepository {
                 .ruleValue(strategyRuleRes.getRuleValue())
                 .ruleDesc(strategyRuleRes.getRuleDesc())
                 .build();
+    }
+
+    @Override
+    public String queryStrategyRuleValue(Long strategyId, Integer awardId, String ruleModel) {
+        return strategyRuleDao.queryStrategyRuleValue(strategyId, awardId, ruleModel);
     }
 }
